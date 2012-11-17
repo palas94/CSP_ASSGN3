@@ -1,0 +1,46 @@
+
+<html>
+    <head>
+        <!--Load the AJAX API-->
+        <script type="text/javascript" src="http://www.google.com/jsapi"></script>
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+        <script type="text/javascript">
+            
+            // Load the Visualization API and the piechart,table package.
+            google.load('visualization', '1', {'packages':['corechart','table','motionchart']});
+            
+            function drawItems() {
+                
+                
+                var jsonTableData = $.ajax({
+                                           url: "getmotiontrycur.php",
+                                           dataType:"json",
+                                           async: false
+                                           }).responseText;
+                
+                // Create our data table out of JSON data loaded from server.
+                var tabledata = new google.visualization.DataTable(jsonTableData);
+                var data = new google.visualization.DataTable();
+                data.addColumn('string', 'topic');
+                data.addColumn('date', 'Date');
+                data.addColumn('number', 'count');
+                
+                var rcount = 0 ;
+                while ( rcount < tabledata.getNumberOfRows() ) {
+                    data.addRow ([ tabledata.getValue(rcount,0) , new Date(tabledata.getValue(rcount,1)) , parseInt(tabledata.getValue(rcount,2))]) ;
+                    rcount++ ;
+                }
+                
+                // Instantiate and draw our table, passing in some options.
+                var table = new google.visualization.MotionChart(document.getElementById('table_div'));
+                table.draw(data, {'width': 1200, 'height': 700});
+            }
+            
+            google.setOnLoadCallback(drawItems);
+            
+            </script>
+    </head>
+    <body>
+        <div id='table_div' style='width: 1200px; height: 700px;'></div>
+    </body>
+</html>

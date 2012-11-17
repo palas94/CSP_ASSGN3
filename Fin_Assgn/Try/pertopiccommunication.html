@@ -1,0 +1,38 @@
+
+<html>
+    <head>
+        <!--Load the AJAX API-->
+        <script type="text/javascript" src="http://www.google.com/jsapi"></script>
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+        <script type="text/javascript">
+            
+            // Load the Visualization API and the piechart,table package.
+            google.load('visualization', '1', {'packages':['corechart','table','annotatedtimeline']});
+            
+            function drawItems() {
+                
+                
+                var jsonTableData = $.ajax({
+                                           url: "getpertopiccommunication.php",
+                                           dataType:"json",
+                                           async: false
+                                           }).responseText;
+                
+                // Create our data table out of JSON data loaded from server.
+                var tabledata = new google.visualization.DataTable(jsonTableData);
+                
+                
+                // Instantiate and draw our table, passing in some options.
+                var table = new google.visualization.BarChart(document.getElementById('table_div'));
+                var options = { colors :['#00e72e']      };
+                table.draw(tabledata,options);
+            }
+            
+            google.setOnLoadCallback(drawItems);
+            
+            </script>
+    </head>
+    <body>
+        <div id='table_div' style='width: 1200px; height: 700px;'></div>
+    </body>
+</html>

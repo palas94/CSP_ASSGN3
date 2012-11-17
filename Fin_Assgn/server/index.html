@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Social Network Analytics</title>
+		<meta charset="UTF-8" />
+        <meta name="description" content="Animated Text and Icon Menu with jQuery" />
+        <meta name="keywords" content="jquery, menu, navigation, sliding, animation, icon" />
+		<meta name="author" content="Codrops" />
+        <link rel="stylesheet" type="text/css" href="home/css/style.css" />
+		<link rel="stylesheet" type="text/css" href="home/css/stimenu.css" />
+		<link href='http://fonts.googleapis.com/css?family=PT+Sans+Narrow&v1' rel='stylesheet' type='text/css' />
+		<link href='http://fonts.googleapis.com/css?family=Wire+One&v1' rel='stylesheet' type='text/css' />
+    </head>
+    <body>
+		<div class="container">
+			<h1>Social Network Analytics<span> CSP 301</span></h1>
+			<ul id="sti-menu" class="sti-menu">
+				<li data-hovercolor="#37c5e9">
+					<a href="timeline/index.html" target='_parent'>
+						<h2 data-type="mText" class="sti-item">Timeline Graph</h2>
+						<h3 data-type="sText" class="sti-item">Analyse Communication Activity Over Time</h3>
+						<span data-type="icon" class="sti-icon sti-icon-care sti-item"></span>
+					</a>
+				</li>
+				<li data-hovercolor="#ff395e">
+					<a href="popular/index.html" target='_parent'>
+						<h2 data-type="mText" class="sti-item">Most Popular Topics</h2>
+						<h3 data-type="sText" class="sti-item">Most Discussed Topics In The Social Network</h3>
+						<span data-type="icon" class="sti-icon sti-icon-alternative sti-item"></span>
+					</a>
+				</li>
+				<li data-hovercolor="#57e676">
+					<a href="trending/index.html" target='_parent'>
+						<h2 data-type="mText" class="sti-item">Trending Topics</h2>
+						<h3 data-type="sText" class="sti-item">See Which Topics Are Hot</h3>
+						<span data-type="icon" class="sti-icon sti-icon-info sti-item"></span>
+					</a>
+				</li>
+				<li data-hovercolor="#ddd2db">
+					<a href="visualisation/index.html" target='_parent'>
+						<h2 data-type="mText" class="sti-item">Social Network Visualisation</h2>
+						<h3 data-type="sText" class="sti-item">See How Topics Spread Through Network</h3>
+						<span data-type="icon" class="sti-icon sti-icon-family sti-item"></span>
+					</a>
+				</li>
+				<li data-hovercolor="#ffdd3f">
+					<a href="pertopic/index.html" target='_parent'>
+						<h2 data-type="mText" class="sti-item">Motion Graph</h2>
+						<h3 data-type="sText" class="sti-item">Analyse Topic Growth Over Time</h3>
+						<span data-type="icon" class="sti-icon sti-icon-technology sti-item"></span>
+					</a>
+				</li>
+			</ul>
+			
+			<div class="footer">
+				<span>Project Under CSP 301</span>
+				<span >	Under The Guidance Of Prof. aaditeshwar Seth
+				</span>
+				<span>Website Dvelopers: Palas , Abhishek Nimesh , Lokesh Yadav , Viswa Teja</span>
+				<a href="#"><span><u>Download Report</u></span></a>
+				<span>&#169 Copyrights reserved</span>
+			</div>
+		</div>
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.14/jquery-ui.min.js"></script>
+		<script type="text/javascript" src="home/js/jquery.easing.1.3.js"></script>
+		<script type="text/javascript" src="home/js/jquery.iconmenu.js"></script>
+		<script type="text/javascript">
+			$(function() {
+				$('#sti-menu').iconmenu();
+			});
+		</script>
+    </body>
+</html>
